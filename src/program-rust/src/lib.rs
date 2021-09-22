@@ -6,6 +6,11 @@ use solana_program::{
     msg,
     program_error::ProgramError,
     pubkey::Pubkey,
+    program::{invoke},
+};
+
+use spl_token_metadata::{
+    instruction::{create_metadata_accounts},
 };
 
 /// Define the type of state stored in accounts
@@ -31,7 +36,52 @@ pub fn process_instruction(
 
     // Get the account to say hello to
     let account = next_account_info(accounts_iter)?;
+    let payer = next_account_info(accounts_iter)?;
+    let mint = next_account_info(accounts_iter)?;
+    let metadata_account = next_account_info(accounts_iter)?;
+    let meta_account_program = next_account_info(accounts_iter)?;
+    let _charm_pda = next_account_info(accounts_iter)?;
+    let system_program = next_account_info(accounts_iter)?;
+    let rent_program = next_account_info(accounts_iter)?;
+    
 
+    let creators: Vec<spl_token_metadata::state::Creator> =
+            vec![spl_token_metadata::state::Creator {
+                address: *payer.key,
+                verified: true,
+                share: 100,
+            }];
+    msg!("Making metadata accounts vector...");
+    let metadata_infos = vec![
+                metadata_account.clone(),
+                mint.clone(),
+                payer.clone(),
+                system_program.clone(),
+                rent_program.clone(),               
+            ];
+    msg!("Making metadata instruction");
+    let instruction = create_metadata_accounts(
+        *meta_account_program.key, 
+        *metadata_account.key, 
+        *mint.key, 
+        *payer.key, 
+        *payer.key, 
+        *payer.key, 
+        "Gourav's nft".to_string(),
+        "Gnft".to_string(), 
+        "https://jsonplaceholder.typicode.com/posts/1".to_string(), 
+        Some(creators),
+        20, 
+        true,
+        true 
+        );
+        msg!("Calling the metadata program to make metadata...");
+        invoke(
+            &instruction,
+            metadata_infos.as_slice(),
+        )?;
+
+        msg!("Metadata created...");
     // The account must be owned by the program in order to modify its data
     if account.owner != program_id {
         msg!("Greeted account does not have the correct program id");

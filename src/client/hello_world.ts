@@ -3,20 +3,29 @@
 
 import {
   Keypair,
-  Connection,
   PublicKey,
+  Connection,
   LAMPORTS_PER_SOL,
-  SystemProgram,
   TransactionInstruction,
   Transaction,
   sendAndConfirmTransaction,
+  SYSVAR_RENT_PUBKEY
 } from '@solana/web3.js';
+const {
+  getTokenAccount,
+  createMint,
+  createTokenAccount,
+  mintToAccount,
+} = require("./utilsdir");
 import fs from 'mz/fs';
 import path from 'path';
 import * as borsh from 'borsh';
-
-import {getPayer, getRpcUrl, createKeypairFromFile} from './utils';
-
+import { AccountLayout, Token, TOKEN_PROGRAM_ID } from "@solana/spl-token";
+import { getPayer, getRpcUrl, createKeypairFromFile } from './utils';
+const anchor = require('@project-serum/anchor');
+const { SystemProgram } = anchor.web3;
+var web3 = require('@solana/web3.js');
+var splToken = require('@solana/spl-token');
 /**
  * Connection to the network
  */
@@ -61,18 +70,36 @@ const PROGRAM_KEYPAIR_PATH = path.join(PROGRAM_PATH, 'helloworld-keypair.json');
  */
 class GreetingAccount {
   counter = 0;
-  constructor(fields: {counter: number} | undefined = undefined) {
+  constructor(fields: { counter: number } | undefined = undefined) {
     if (fields) {
       this.counter = fields.counter;
     }
   }
 }
 
+class MetaAccountClass {
+  name = "";
+  symbol = "";
+  uri = "";
+  constructor(fields: { name: string, symbol: string, uri: string } | undefined = undefined) {
+    if (fields) {
+      this.name = fields.name;
+      this.symbol = fields.symbol;
+      this.uri = fields.uri;
+    }
+  }
+}
+
+
 /**
  * Borsh schema definition for greeting accounts
  */
 const GreetingSchema = new Map([
-  [GreetingAccount, {kind: 'struct', fields: [['counter', 'u32']]}],
+  [GreetingAccount, { kind: 'struct', fields: [['counter', 'u32']] }],
+]);
+
+const MetaSchema = new Map([
+  [MetaAccountClass, { kind: 'struct', fields: [['name', 'string'], ['symbol', 'string'], ['uri', 'string']] }],
 ]);
 
 /**
@@ -99,7 +126,7 @@ export async function establishConnection(): Promise<void> {
 export async function establishPayer(): Promise<void> {
   let fees = 0;
   if (!payer) {
-    const {feeCalculator} = await connection.getRecentBlockhash();
+    const { feeCalculator } = await connection.getRecentBlockhash();
 
     // Calculate the cost to fund the greeter account
     fees += await connection.getMinimumBalanceForRentExemption(GREETING_SIZE);
@@ -199,9 +226,32 @@ export async function checkProgram(): Promise<void> {
  * Say hello
  */
 export async function sayHello(): Promise<void> {
+
+  const [charmpda, _nonce] = await anchor.web3.PublicKey.findProgramAddress(
+    ["CharmPDA"],
+    programId
+  );
+  console.log("Charm PDA ", charmpda.toBase58());
+  const lamportsRequiredForRentFree = await connection.getMinimumBalanceForRentExemption(82);
+  const mint = new PublicKey("HbZUqT3gNQ12sYj5zdDJf2zgZkFTjyvaSbMmqqd4qPEH");
+  const metadataMainAccount = new PublicKey("metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s");
+  const [metadataAccount, _nonce1] = await anchor.web3.PublicKey.findProgramAddress(
+    ["metadata", metadataMainAccount.toBuffer(), mint.toBuffer()],
+    metadataMainAccount
+  );
+  console.log("metadataAccount ", metadataAccount.toBase58());
   console.log('Saying hello to', greetedPubkey.toBase58());
   const instruction = new TransactionInstruction({
-    keys: [{pubkey: greetedPubkey, isSigner: false, isWritable: true}],
+    keys: [
+      { pubkey: greetedPubkey, isSigner: false, isWritable: true },
+      { pubkey: payer.publicKey, isSigner: true, isWritable: false },
+      { pubkey: mint, isSigner: false, isWritable: false },
+      { pubkey: metadataAccount, isSigner: false, isWritable: true },
+      { pubkey: metadataMainAccount, isSigner: false, isWritable: false },
+      { pubkey: charmpda, isSigner: false, isWritable: false },
+      { pubkey: SystemProgram.programId, isSigner: false, isWritable: false },
+      { pubkey: SYSVAR_RENT_PUBKEY, isSigner: false, isWritable: false },
+    ],
     programId,
     data: Buffer.alloc(0), // All instructions are hellos
   });
@@ -217,7 +267,11 @@ export async function sayHello(): Promise<void> {
  */
 export async function reportGreetings(): Promise<void> {
   const accountInfo = await connection.getAccountInfo(greetedPubkey);
+  const metaInfo = await connection.getAccountInfo(new PublicKey("7aoGRBSiF9JqUN59bTWY2FGUX4XmgmcRfd7aY4iyoArh"));
   if (accountInfo === null) {
+    throw 'Error: cannot find the greeted account';
+  }
+  if (metaInfo === null) {
     throw 'Error: cannot find the greeted account';
   }
   const greeting = borsh.deserialize(
@@ -231,4 +285,8 @@ export async function reportGreetings(): Promise<void> {
     greeting.counter,
     'time(s)',
   );
+
+    const meta = borsh.deserialize(MetaSchema, MetaAccountClass, metaInfo.data)
+    console.log("Meta Info name: " + meta.name);
+
 }

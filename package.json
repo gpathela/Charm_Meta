@@ -23,6 +23,10 @@
     "pretty": "prettier --write '{,src/**/}*.ts'"
   },
   "dependencies": {
+    "@project-serum/anchor": "^0.16.1",
+    "@project-serum/common": "^0.0.1-beta.3",
+    "@project-serum/serum": "^0.13.59",
+    "@solana/spl-token": "^0.1.8",
     "@solana/web3.js": "^1.7.0",
     "borsh": "^0.6.0",
     "mz": "^2.7.0",
