@@ -1,0 +1,2 @@
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/home/ubuntu/environment/anchorprojects/helloworlds/src/program-rust/token-metadata/test/target/rls/debug/build/typenum-419f669dde8ede6c/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=/home/ubuntu/environment/anchorprojects/helloworlds/src/program-rust/token-metadata/test/target/rls/debug/build/typenum-419f669dde8ede6c/out/op.rs

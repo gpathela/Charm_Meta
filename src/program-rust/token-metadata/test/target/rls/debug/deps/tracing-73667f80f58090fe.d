@@ -1,0 +1,13 @@
+/home/ubuntu/environment/anchorprojects/helloworlds/src/program-rust/token-metadata/test/target/rls/debug/deps/tracing-73667f80f58090fe.rmeta: /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/lib.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/macros.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/dispatcher.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/field.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/instrument.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/level_filters.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/span.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/stdlib.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/subscriber.rs
+
+/home/ubuntu/environment/anchorprojects/helloworlds/src/program-rust/token-metadata/test/target/rls/debug/deps/tracing-73667f80f58090fe.d: /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/lib.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/macros.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/dispatcher.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/field.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/instrument.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/level_filters.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/span.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/stdlib.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/subscriber.rs
+
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/lib.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/macros.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/dispatcher.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/field.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/instrument.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/level_filters.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/span.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/stdlib.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tracing-0.1.28/src/subscriber.rs:

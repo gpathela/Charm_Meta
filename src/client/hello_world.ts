@@ -233,10 +233,14 @@ export async function sayHello(): Promise<void> {
   );
   console.log("Charm PDA ", charmpda.toBase58());
   const lamportsRequiredForRentFree = await connection.getMinimumBalanceForRentExemption(82);
-  const mint = new PublicKey("HbZUqT3gNQ12sYj5zdDJf2zgZkFTjyvaSbMmqqd4qPEH");
+  const mint = new PublicKey("6XbrKwbL5L9BAfcG4hLqLEAC1KLAnfnndTdS1BDeztQL");
   const metadataMainAccount = new PublicKey("metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s");
   const [metadataAccount, _nonce1] = await anchor.web3.PublicKey.findProgramAddress(
     ["metadata", metadataMainAccount.toBuffer(), mint.toBuffer()],
+    metadataMainAccount
+  );
+  const [masterEditionAccount, _nonce2] = await anchor.web3.PublicKey.findProgramAddress(
+    ["metadata", metadataMainAccount.toBuffer(), mint.toBuffer(), "edition"],
     metadataMainAccount
   );
   console.log("metadataAccount ", metadataAccount.toBase58());
@@ -248,12 +252,12 @@ export async function sayHello(): Promise<void> {
       { pubkey: mint, isSigner: false, isWritable: false },
       { pubkey: metadataAccount, isSigner: false, isWritable: true },
       { pubkey: metadataMainAccount, isSigner: false, isWritable: false },
-      { pubkey: charmpda, isSigner: false, isWritable: false },
+      { pubkey: masterEditionAccount, isSigner: false, isWritable: true },
       { pubkey: SystemProgram.programId, isSigner: false, isWritable: false },
       { pubkey: SYSVAR_RENT_PUBKEY, isSigner: false, isWritable: false },
     ],
     programId,
-    data: Buffer.alloc(0), // All instructions are hellos
+    data: Buffer.alloc(74, "NFTCREATEDBYGPATHELAGNFThttps://jsonplaceholder.typicode.com/posts/1234567"), // All instructions are hellos
   });
   await sendAndConfirmTransaction(
     connection,
@@ -286,7 +290,7 @@ export async function reportGreetings(): Promise<void> {
     'time(s)',
   );
 
-    const meta = borsh.deserialize(MetaSchema, MetaAccountClass, metaInfo.data)
-    console.log("Meta Info name: " + meta.name);
+    //const meta = borsh.deserialize(MetaSchema, MetaAccountClass, metaInfo.data)
+    //console.log("Meta Info name: " + meta.name);
 
 }

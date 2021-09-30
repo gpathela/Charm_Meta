@@ -1,0 +1,11 @@
+/home/ubuntu/environment/anchorprojects/helloworlds/src/program-rust/token-metadata/test/target/rls/debug/deps/tinyvec-31e0d1e1949e7a97.rmeta: /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/lib.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/array.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/array/generated_impl.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/arrayvec.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/arrayvec_drain.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/slicevec.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/tinyvec.rs
+
+/home/ubuntu/environment/anchorprojects/helloworlds/src/program-rust/token-metadata/test/target/rls/debug/deps/tinyvec-31e0d1e1949e7a97.d: /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/lib.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/array.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/array/generated_impl.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/arrayvec.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/arrayvec_drain.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/slicevec.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/tinyvec.rs
+
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/lib.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/array.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/array/generated_impl.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/arrayvec.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/arrayvec_drain.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/slicevec.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.0/src/tinyvec.rs:

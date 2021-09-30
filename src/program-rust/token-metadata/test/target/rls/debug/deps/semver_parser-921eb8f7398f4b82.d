@@ -1,0 +1,11 @@
+/home/ubuntu/environment/anchorprojects/helloworlds/src/program-rust/token-metadata/test/target/rls/debug/deps/semver_parser-921eb8f7398f4b82.rmeta: /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/lib.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/range_set.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/range.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/lexer.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/parser.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/version.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/generated.rs
+
+/home/ubuntu/environment/anchorprojects/helloworlds/src/program-rust/token-metadata/test/target/rls/debug/deps/semver_parser-921eb8f7398f4b82.d: /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/lib.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/range_set.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/range.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/lexer.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/parser.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/version.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/generated.rs
+
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/lib.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/range_set.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/range.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/lexer.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/parser.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/version.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-parser-0.10.2/src/generated.rs:

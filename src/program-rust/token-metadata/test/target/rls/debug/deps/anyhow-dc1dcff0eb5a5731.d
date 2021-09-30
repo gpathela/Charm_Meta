@@ -1,0 +1,14 @@
+/home/ubuntu/environment/anchorprojects/helloworlds/src/program-rust/token-metadata/test/target/rls/debug/deps/anyhow-dc1dcff0eb5a5731.rmeta: /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/lib.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/backtrace.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/chain.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/context.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/error.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/fmt.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/kind.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/macros.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/ptr.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/wrapper.rs
+
+/home/ubuntu/environment/anchorprojects/helloworlds/src/program-rust/token-metadata/test/target/rls/debug/deps/anyhow-dc1dcff0eb5a5731.d: /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/lib.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/backtrace.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/chain.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/context.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/error.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/fmt.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/kind.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/macros.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/ptr.rs /home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/wrapper.rs
+
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/lib.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/backtrace.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/chain.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/context.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/error.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/fmt.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/kind.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/macros.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/ptr.rs:
+/home/ubuntu/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.44/src/wrapper.rs:
