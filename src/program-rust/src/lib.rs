@@ -29,6 +29,7 @@ pub fn process_instruction(
 ) -> ProgramResult {
     msg!("Hello World Rust program entrypoint");
 
+   
     // Iterating accounts is safer then indexing
     let accounts_iter = &mut accounts.iter();
 
@@ -41,6 +42,7 @@ pub fn process_instruction(
     let master_edition_account = next_account_info(accounts_iter)?;
     let system_program = next_account_info(accounts_iter)?;
     let rent_program = next_account_info(accounts_iter)?;
+    let token_program = next_account_info(accounts_iter)?;
 
     let creators: Vec<spl_token_metadata::state::Creator> =
         vec![spl_token_metadata::state::Creator {
@@ -52,13 +54,15 @@ pub fn process_instruction(
     let metadata_infos = vec![
         metadata_account.clone(),
         master_edition_account.clone(),
+        meta_account_program.clone(),
         mint.clone(),
         payer.clone(),
         system_program.clone(),
         rent_program.clone(),
+        token_program.clone(),
     ];
     msg!("Making metadata instruction");
-    let _instruction = create_metadata_accounts(
+    let instruction = create_metadata_accounts(
         *meta_account_program.key,
         *metadata_account.key,
         *mint.key,
@@ -75,7 +79,7 @@ pub fn process_instruction(
         true,
     );
     msg!("Calling the metadata program to make metadata...");
-    //invoke(&instruction, metadata_infos.as_slice())?;
+    invoke(&instruction, metadata_infos.as_slice())?;
 
     msg!("Metadata created...");
 
@@ -92,10 +96,7 @@ pub fn process_instruction(
     );
 
     msg!("Calling the metadata program to make masteredition...");
-    invoke(
-        &instruction_create_master_edition,
-        metadata_infos.as_slice(),
-    )?;
+    invoke(&instruction_create_master_edition, metadata_infos.as_slice(),)?;
 
     // The account must be owned by the program in order to modify its data
     if account.owner != program_id {
