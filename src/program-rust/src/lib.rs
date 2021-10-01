@@ -37,7 +37,14 @@ pub fn process_instruction(
     let system_program = next_account_info(accounts_iter)?;
     let rent_program = next_account_info(accounts_iter)?;
     
-
+     //First 20 chars as Name,
+     let name = String::from_utf8_lossy(&data[0..20]).to_string();
+     //Next 4 as Symbol
+     let symbol = String::from_utf8_lossy(&data[20..24]).to_string();
+     //Next 50 as URL
+     let url = String::from_utf8_lossy(&data[24..74]).to_string();
+     msg!("{}, {}, {}", name.clone(), symbol.clone(), url.clone());
+    
     let creators: Vec<spl_token_metadata::state::Creator> =
         vec![spl_token_metadata::state::Creator {
             address: *payer.key,
@@ -65,12 +72,9 @@ pub fn process_instruction(
         *mint_authority.key,
         *payer.key,
         *update_authority.key,
-        //First 20 chars as Name,
-        String::from_utf8_lossy(&data[0..20]).to_string(),
-        //Next 4 as Symbol
-        String::from_utf8_lossy(&data[20..24]).to_string(),
-        //Next 50 as URL
-        String::from_utf8_lossy(&data[24..74]).to_string(),
+         name,
+         symbol,
+         url,
         Some(creators),
         //Default creator royality.. will be changed to client 
         20,
@@ -100,6 +104,7 @@ pub fn process_instruction(
     invoke(&instruction_create_master_edition, metadata_infos.as_slice(),)?;
 
     msg!("Metadata & editions created");
+    
 
     Ok(())
 }

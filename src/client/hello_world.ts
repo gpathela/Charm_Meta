@@ -233,7 +233,7 @@ export async function sayHello(): Promise<void> {
   );
   console.log("Charm PDA ", charmpda.toBase58());
   const lamportsRequiredForRentFree = await connection.getMinimumBalanceForRentExemption(82);
-  const mint = new PublicKey("xP6sctBveLCrQoJ8gjBrtwa99zeF57e6zGxHQC1THN6");
+  const mint = new PublicKey("6MuNPhewFhNWrUUu3m6bfTvTEFgMWSegnNAWJUJ9aG3S");
   const metadataMainAccount = new PublicKey("metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s");
   const TOKEN_PROGRAM_ID = new PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA");
   const [metadataAccount, _nonce1] = await anchor.web3.PublicKey.findProgramAddress(
